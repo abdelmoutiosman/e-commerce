@@ -110,6 +110,7 @@
                         </li>
                         <li><a href="{{url('/manage-order')}}"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage Order</span></a></li>
                         <li><a href="{{url('/all-contact')}}"><i class="icon-phone"></i><span class="hidden-tablet"> Contact Us</span></a></li>
+                        <li><a href="{{url('/all-review')}}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Reviews</span></a></li>
                         <li><a href="{{url('setting-index')}}"><i class="halflings-icon white wrench"></i><span class="hidden-tablet"> Settings</span></a></li>
                         <li><a href="{{url('/edit-profile',['admin_id'=>Session::get('id')])}}"><i class="icon-user"></i><span class="hidden-tablet"> Profile</span></a></li>
                         <li><a href="{{url('/edit-password',['admin_id'=>Session::get('id')])}}"><i class="icon-user"></i><span class="hidden-tablet"> Change Password</span></a></li>

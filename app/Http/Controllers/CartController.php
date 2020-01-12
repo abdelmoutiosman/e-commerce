@@ -33,10 +33,18 @@ class CartController extends Controller
         Cart::remove($row_id);
         return redirect('/show-cart');
     }
-    public function update_cart(Request $request){
-        $qty=$request->quantity;
-        $row_id=$request->rowId;
-        Cart::update($row_id,$qty);
-        return redirect('/show-cart');
+    public function cart_decr($row_id,$quantity){
+        Cart::update($row_id,$quantity - 1);
+        return redirect()->back();
     }
+    public function cart_incr($row_id,$quantity){
+        Cart::update($row_id,$quantity + 1);
+        return redirect()->back();
+    }
+    // public function update_cart(Request $request){
+    //     $qty=$request->quantity;
+    //     $row_id=$request->rowId;
+    //     Cart::update($row_id,$qty);
+    //     return redirect()->back();
+    // }
 }

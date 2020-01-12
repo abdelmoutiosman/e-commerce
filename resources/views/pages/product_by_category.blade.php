@@ -8,13 +8,13 @@
                 <div class="single-products">
                     <div class="productinfo text-center">
                         <img src="{{asset($product->image)}}" alt="" style="height: 300px"/>
-                        <h2>{{$product->price}} TK</h2>
+                        <h2>{{$product->price}} $</h2>
                         <p>{{$product->product_name}}</p>
                         <a href="{{url('/view-product',$product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
                     <div class="product-overlay">
                         <div class="overlay-content">
-                            <h2>{{$product->price}} TK</h2>
+                            <h2>{{$product->price}} $</h2>
                             <p>{{$product->product_name}}</p>
                             <a href="{{url('/view-product',$product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>

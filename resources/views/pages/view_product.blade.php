@@ -15,7 +15,7 @@
                     <p>color: <span style="vertical-align: middle;width: 40px;height: 30px;background-color: {{$product->color}}"></span></p>
                     <img src="{{asset('frontend/images/product-details/rating.png')}}" alt="" />
                     <span>
-                        <span>{{$product->price}} TK</span>
+                        <span>{{$product->price}} $</span>
                         <form action="{{url('/add-to-cart')}}" method="post">
                             {{csrf_field()}}
                             <label>Quantity:</label>

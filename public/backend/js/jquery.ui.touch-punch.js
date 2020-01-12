@@ -51,8 +51,8 @@
       touch.clientX,    // clientX                    
       touch.clientY,    // clientY                    
       false,            // ctrlKey                    
-      false,            // altKey                     
-      false,            // shiftKey                   
+      false,            // al$ey                     
+      false,            // shif$ey                   
       false,            // metaKey                    
       0,                // button                     
       null              // relatedTarget              

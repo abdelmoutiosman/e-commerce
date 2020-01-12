@@ -38,16 +38,20 @@
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
-                                <form action="{{url('/update-cart')}}" method="post">
-                                    {{csrf_field()}}
+                                    <a class="cart_quantity_down" href="{{url('/update-cart-decr',['row_id'=>$content->rowId,'quantity'=>$content->qty])}}"> - </a>
+                                    <input class="cart_quantity_input" type="text" value="{{$content->qty}}"  size="2">
+                                    <a class="cart_quantity_up" href="{{url('/update-cart-incr',['row_id'=>$content->rowId,'quantity'=>$content->qty])}}"> + </a>
+                                    
+                                    {{--  <form action="{{url('/update-cart')}}" method="post">
+                                        {{csrf_field()}}
                                     <input class="cart_quantity_input" type="text" name="quantity" value="{{$content->qty}}" autocomplete="off" size="2">
                                     <input type="hidden" name="rowId" value="{{$content->rowId}}">
                                     <input type="submit" name="submit" value="Update" class="btn btn-sm btn-default">
-                                </form>
+                                    </form>  --}}
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">{{$content->total}}</p>
+                            <p class="cart_total_price">{{number_format($content->total)}}</p>
                         </td>
                         <td class="cart_delete">
                             <a class="cart_quantity_delete" href="{{url('/delete-cart',$content->rowId)}}"><i class="fa fa-times"></i></a>

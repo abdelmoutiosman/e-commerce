@@ -7,6 +7,8 @@ use DB;
 use App\Http\Requests;
 use Session;
 use Cart;
+use Stripe\Charge;
+use Stripe\Stripe;
 use Illuminate\Support\Facades\Redirect;
 session_start();
 
@@ -29,7 +31,7 @@ class CheckoutController extends Controller
         $customer_id=DB::table('customers')->insertGetId($data);
         Session::put('customer_id',$customer_id);
         Session::put('customer_name',$request->customer_name);
-        return redirect(url('/checkout'));
+        return redirect(url('/'));
     }
     public function customer_login(Request $request){
         $customer_email=$request->email_address;
@@ -41,7 +43,7 @@ class CheckoutController extends Controller
         if($result){
             Session::put('customer_name',$result->customer_name);
             Session::put('customer_id',$result->customer_id);
-            return Redirect::to('/checkout');
+            return Redirect::to('/');
         }
         else{
             Session::put('message','email or password invalid');
@@ -123,7 +125,7 @@ class CheckoutController extends Controller
             return view('pages.paypal');
         }
         elseif ($payment_method == 'stripecard'){
-            Cart::destroy();
+           // Cart::destroy();
             return view('pages.stripecard');
         }
         else{
@@ -133,6 +135,21 @@ class CheckoutController extends Controller
 //    private function handcash(){}
 //    private function paypal(){}
 //    private function stripecard(){}
+    public function pay(Request $request)
+    {
+        //dd(request()->all());
+        Stripe::setApiKey('sk_test_gPTtjIfS8YfstgTyqJzKFPCi00aSz0GwgC');
+        //$token = $_POST['stripeToken'];
+        $charge =Charge::create([
+            'amount' => Cart::total() * 100,
+            'currency' => 'usd',
+            'description' => 'E Shopper Selling Books',
+            'source' => $request->stripeToken,
+        ]);
+        
+        Cart::destroy();
+        return redirect('/');
+    }
 
     public function logout_customer(){
         session()->flush();

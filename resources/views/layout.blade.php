@@ -137,10 +137,10 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <form action="{{url('/search')}}" method="get" name="test">
+                    <form action="{{url('/search')}}" method="GET" name="test">
                         {{csrf_field()}}
                         <div class="search_box pull-right">
-                            <input type="text" name="search" placeholder="Search" onkeydown="test.submit()" />
+                            <input type="text" name="search" placeholder="Search" onblur="test.submit()" />
                         </div>
                     </form>
                 </div>

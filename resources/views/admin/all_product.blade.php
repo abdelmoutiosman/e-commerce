@@ -56,7 +56,7 @@
                             <td>{{$product->manufacture_name}}</td>
                             <td>{!! $product->short_description !!}</td>
                             <td>{!! $product->long_description !!}</td>
-                            <td>{{$product->price}} Tk</td>
+                            <td>{{$product->price}} $</td>
                             <td>{{$product->size}}</td>
                             <td>{{$product->color}}</td>
                             <td class="center">

@@ -3,20 +3,34 @@
     <section id="form"><!--form-->
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-1">
-                    <div class="login-form"><!--login form-->
+                <div class="col-sm-12">
+                    <div><!--login form-->
+                        <p class="alert-success">
+                            <?php
+                                $message=Session::get('message');
+                                if ($message){
+                                    echo $message;
+                                    Session::put('message',null);
+                                }
+                            ?>
+                        </p>
                         <h1>Thanks For Order..</h1>
-                        <h2>We Will Contact As Soon As Possible</h2>
-                    </div><!--/login form-->
+                        <h2>You Will Paynow</h2>
+                        <form action="/cart-checkout" method="post">
+                            {{ csrf_field() }}
+                            <script src="https://checkout.stripe.com/checkout.js"
+                                class="stripe-button"
+                                data-key="pk_test_zvjpMVJpNLCnOnugAJLjkJj000mqr2bnoA"
+                                data-amount="{{ Cart::total() * 100 }}"
+                                data-name="E Shopper"
+                                data-description="Widget"
+                                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                data-locale="auto">
+                                {{--  data-zip-code="true"  --}}
+                            </script>
+                        </form>
+                    </div>
                 </div>
-                {{--                <div class="col-sm-1">--}}
-                {{--                    <h2 class="or">OR</h2>--}}
-                {{--                </div>--}}
-                {{--                <div class="col-sm-4">--}}
-                {{--                    <div class="signup-form"><!--sign up form-->--}}
-                {{--                        <h2>New User Signup!</h2>--}}
-                {{--                    </div><!--/sign up form-->--}}
-                {{--                </div>--}}
             </div>
         </div>
     </section><!--/form-->

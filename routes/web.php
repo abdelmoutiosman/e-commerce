@@ -16,7 +16,9 @@ Auth::routes();
 //scout search
 use Illuminate\Http\Request;
 Route::get('/search', function (Request $request) {
-    $all_product=App\Models\Product::search($request->search)->paginate(1);
+    //algolia search
+    //$all_product=App\Models\Product::search($request->search)->paginate(2);
+    $all_product=App\Models\Product::where('product_name','like','%' . $request->search . '%')->paginate(2);
     return view('pages.search_result',compact('all_product'));
 });
 
@@ -41,7 +43,9 @@ Route::post('/add-to-cart', 'CartController@add_to_cart');
 //delete cart
 Route::get('/delete-cart/{row_id}', 'CartController@delete_cart');
 //update cart
-Route::post('/update-cart', 'CartController@update_cart');
+Route::get('/update-cart-decr/{row_id}/{quantity}', 'CartController@cart_decr');
+Route::get('/update-cart-incr/{row_id}/{quantity}', 'CartController@cart_incr');
+//Route::post('/update-cart', 'CartController@update_cart');
 
 //route for contact us
 //show contact us
@@ -58,6 +62,9 @@ Route::get('/checkout', 'CheckoutController@checkout');
 Route::get('/login-checkout', 'CheckoutController@login_checkout');
 Route::post('/customer-registeration','CheckoutController@customer_register');
 Route::post('/customer-login','CheckoutController@customer_login');
+
+Route::post('/cart-checkout','CheckoutController@pay');
+
 //customer account
 Route::get('/customer-account/{customer_id}', 'CheckoutController@account');
 Route::post('/edit-password-customer/{customer_id}', 'CheckoutController@edit_password');
@@ -127,6 +134,10 @@ Route::get('/active-slider/{slider_id}', 'SliderController@active');
 //contactus related route
 Route::get('/all-contact', 'ContactController@all_contact');
 Route::get('/delete-contact/{contact_id}','ContactController@delete_contact');
+
+//review related route
+Route::get('/all-review', 'ReviewController@all_review');
+Route::get('/delete-review/{review_id}','ReviewController@delete_review');
 
 //customer related route
 Route::get('/all-customer', 'CustomerController@all_customer');
