@@ -109,6 +109,7 @@
                             </ul>
                         </li>
                         <li><a href="{{url('/manage-order')}}"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage Order</span></a></li>
+                        <li><a href="{{url('/all-payment')}}"><i class="icon-list-alt"></i><span class="hidden-tablet"> Payments</span></a></li>
                         <li><a href="{{url('/all-contact')}}"><i class="icon-phone"></i><span class="hidden-tablet"> Contact Us</span></a></li>
                         <li><a href="{{url('/all-review')}}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Reviews</span></a></li>
                         <li><a href="{{url('setting-index')}}"><i class="halflings-icon white wrench"></i><span class="hidden-tablet"> Settings</span></a></li>

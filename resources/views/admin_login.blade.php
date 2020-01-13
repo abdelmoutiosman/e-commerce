@@ -39,7 +39,7 @@
             <div class="row-fluid">
                 <div class="login-box">
                     <div class="icons">
-                        <a href="index.html"><i class="halflings-icon home"></i></a>
+                        <a href="{{url('/')}}"><i class="halflings-icon home"></i></a>
                         <a href="#"><i class="halflings-icon cog"></i></a>
                     </div>
                     <p class="alert-danger">
@@ -73,9 +73,6 @@
                     </form>
                     <hr>
                     <h3><a href="{{url('/forget-password')}}">Forgot Password?</a></h3>
-                    <p>
-                        No problem, <a href="#">click here</a> to get a new password.
-                    </p>
                 </div><!--/span-->
             </div><!--/row-->
 

@@ -135,6 +135,12 @@ Route::get('/active-slider/{slider_id}', 'SliderController@active');
 Route::get('/all-contact', 'ContactController@all_contact');
 Route::get('/delete-contact/{contact_id}','ContactController@delete_contact');
 
+//payment related route
+Route::get('/all-payment', 'PaymentController@all_payment');
+Route::get('/delete-payment/{payment_id}','PaymentController@delete_payment');
+Route::get('/pending-payment/{payment_id}', 'PaymentController@pending');
+Route::get('/accept-payment/{payment_id}', 'PaymentController@accepted');
+
 //review related route
 Route::get('/all-review', 'ReviewController@all_review');
 Route::get('/delete-review/{review_id}','ReviewController@delete_review');

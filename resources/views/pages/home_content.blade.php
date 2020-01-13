@@ -16,7 +16,7 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="productinfo text-center">
-                        <img src="{{asset($product->image)}}" alt="" style="height: 300px"/>
+                        <img src="{{asset($product->image)}}" alt="" style="height: 250px"/>
                         <h2>{{$product->price}} $</h2>
                         <p>{{$product->product_name}}</p>
                         <a href="{{url('/view-product',$product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -40,7 +40,8 @@
     @endforeach
     </div><!--features_items-->
 
-        <div class="category-tab"><!--category-tab-->
+    <!--category-tab-->
+    <div class="category-tab">
             <div class="col-sm-12">
                 <ul class="nav nav-tabs">
                     <?php
@@ -81,11 +82,12 @@
                     </div>
                     @endforeach
             </div>
-        </div><!--/category-tab-->
+        </div>
+        <!--/category-tab-->
 
 
 
-        <div class="recommended_items"><!--recommended_items-->
+        {{--  <div class="recommended_items"><!--recommended_items-->
             <h2 class="title text-center">recommended items</h2>
             <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -179,5 +181,5 @@
                     <i class="fa fa-angle-right"></i>
                 </a>
             </div>
-        </div><!--/recommended_items-->
+        </div><!--/recommended_items-->  --}}
 @endsection

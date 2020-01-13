@@ -20,7 +20,7 @@
                             {{ csrf_field() }}
                             <script src="https://checkout.stripe.com/checkout.js"
                                 class="stripe-button"
-                                data-key="pk_test_zvjpMVJpNLCnOnugAJLjkJj000mqr2bnoA"
+                                data-key=""
                                 data-amount="{{ Cart::total() * 100 }}"
                                 data-name="E Shopper"
                                 data-description="Widget"

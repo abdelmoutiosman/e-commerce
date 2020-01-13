@@ -37,13 +37,13 @@
                         <div class="control-group">
                             <label class="control-label" for="date01">Category Name</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge"  name="category_name" placeholder="Type Category Name" value="{{$category->name}}"/>
+                                <input type="text" class="input-xlarge"  name="category_name" placeholder="Type Category Name" value="{{$category->category_name}}"/>
                             </div>
                         </div>
                         <div class="control-group hidden-phone">
                             <label class="control-label" for="textarea2">Category Description</label>
                             <div class="controls">
-                                <textarea class="cleditor" id="textarea2" rows="3" name="category_description" >{{$category->description}}</textarea>
+                                <textarea class="cleditor" id="textarea2" rows="3" name="category_description" >{{$category->category_description}}</textarea>
                             </div>
                         </div>
                         <div class="form-actions">

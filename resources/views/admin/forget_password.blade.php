@@ -39,7 +39,7 @@
         <div class="row-fluid">
             <div class="login-box">
                 <div class="icons">
-                    <a href="index.html"><i class="halflings-icon home"></i></a>
+                    <a href="{{url('/')}}"><i class="halflings-icon home"></i></a>
                     <a href="#"><i class="halflings-icon cog"></i></a>
                 </div>
                 <p class="alert-danger">
@@ -57,15 +57,15 @@
                     <fieldset>
                         <div class="input-prepend" title="Email Address">
                             <span class="add-on"><i class="halflings-icon user"></i></span>
-                            <input class="input-large span10" name="email" id="email" type="email" placeholder="type email address to check" required autofocus/>
+                            <input class="input-large span10" name="email" id="email" type="email" placeholder="Type email address to check" required autofocus/>
                         </div>
                         <div class="input-prepend" title="Password">
                             <span class="add-on"><i class="halflings-icon lock"></i></span>
-                            <input class="input-large span10" name="password" id="password" type="password" placeholder="type new password" required autofocus/>
+                            <input class="input-large span10" name="password" id="password" type="password" placeholder="Type new password" required autofocus/>
                         </div>
                         <div class="clearfix"></div>
                         <div class="button-login">
-                            <button type="submit" class="btn btn-primary">update</button>
+                            <button type="submit" class="btn btn-primary">Reset Password</button>
                         </div>
                         <div class="clearfix"></div>
                     </fieldset>

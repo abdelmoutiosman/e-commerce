@@ -138,7 +138,7 @@ class CheckoutController extends Controller
     public function pay(Request $request)
     {
         //dd(request()->all());
-        Stripe::setApiKey('sk_test_gPTtjIfS8YfstgTyqJzKFPCi00aSz0GwgC');
+        Stripe::setApiKey('');
         //$token = $_POST['stripeToken'];
         $charge =Charge::create([
             'amount' => Cart::total() * 100,

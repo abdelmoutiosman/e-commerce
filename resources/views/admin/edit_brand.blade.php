@@ -37,13 +37,13 @@
                         <div class="control-group">
                             <label class="control-label" for="date01">Brand Name</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge"  name="manufacture_name" placeholder="Type Brand Name" value="{{$brand->name}}"/>
+                                <input type="text" class="input-xlarge"  name="manufacture_name" placeholder="Type Brand Name" value="{{$brand->manufacture_name}}"/>
                             </div>
                         </div>
                         <div class="control-group hidden-phone">
                             <label class="control-label" for="textarea2">Brand Description</label>
                             <div class="controls">
-                                <textarea class="cleditor" id="textarea2" rows="3" name="manufacture_description" >{{$brand->description}}</textarea>
+                                <textarea class="cleditor" id="textarea2" rows="3" name="manufacture_description" >{{$brand->manufacture_description}}</textarea>
                             </div>
                         </div>
                         <div class="form-actions">

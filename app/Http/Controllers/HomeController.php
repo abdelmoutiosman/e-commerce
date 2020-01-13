@@ -17,7 +17,7 @@ class HomeController extends Controller
             ->select('products.*','categories.category_name')
             ->where('category_id',$category_id)
             ->where('products.publication_status',1)
-            ->limit(8)
+            ->limit(9)
             ->get();
         return view('pages.product_by_category',compact('products_category'));
     }
@@ -27,7 +27,7 @@ class HomeController extends Controller
             ->select('products.*','manufactures.manufacture_name')
             ->where('manufacture_id',$brand_id)
             ->where('products.publication_status',1)
-            ->limit(8)
+            ->limit(5)
             ->get();
         return view('pages.product_by_brand',compact('products_brand'));
     }
@@ -47,7 +47,7 @@ class HomeController extends Controller
             ->Join('manufactures', 'products.manufacture_id', '=', 'manufactures.id')
             ->select('products.*','categories.category_name','manufactures.manufacture_name')
             ->where('products.publication_status',1)
-            ->paginate(8);
+            ->paginate(5);
         return view('pages.all_product',compact('all_product'));
     }
     public function show_contact(){
